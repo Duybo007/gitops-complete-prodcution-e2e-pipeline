@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-prodcution-e2e-app
-          image: smartcloud2022/complete-prodcution-e2e-pipeline:1.0.0.64
+          image: smartcloud2022/complete-prodcution-e2e-pipeline:1.0.0.65
           resources:
             limits:
               memory: "256Mi"
