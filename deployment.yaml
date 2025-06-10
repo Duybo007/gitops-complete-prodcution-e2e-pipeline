@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-prodcution-e2e-app
-          image: duybo95/complete-prodcution-e2e-pipeline:1.0.0.15
+          image: duybo95/complete-production-e2e-pipeline:1.0.0.15
           resources:
             limits:
               memory: "256Mi"
