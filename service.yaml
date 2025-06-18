@@ -3,9 +3,28 @@ kind: Service
 metadata:
   name: complete-prodcution-e2e-svc
 spec:
-  type: NodePort
   selector:
     app: complete-prodcution-e2e-app
   ports:
     - port: 80
       targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: complete-prodcution-e2e-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+spec:
+  rules:
+    - host: duyngo.xyz
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: complete-prodcution-e2e-svc
+                port:
+                  number: 80 
