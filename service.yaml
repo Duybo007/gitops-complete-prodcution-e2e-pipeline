@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: complete-prodcution-e2e-svc
 spec:
+  type: NodePort
   selector:
     app: complete-prodcution-e2e-app
   ports:
@@ -14,10 +15,11 @@ kind: Ingress
 metadata:
   name: complete-prodcution-e2e-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
 spec:
   rules:
-    - host: app.duyngo.xyz
+    - host: duyngo.xyz
       http:
         paths:
           - path: /
