@@ -14,8 +14,7 @@ kind: Ingress
 metadata:
   name: complete-prodcution-e2e-ingress
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
     - host: app.duyngo.xyz
